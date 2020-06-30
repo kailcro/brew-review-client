@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Brew Review</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,31 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Brew Review</h1>
+      <section class="sign-up">
+        <form id="sign-up-form">
+          <h4>Sign Up:</h4>
+          <input name="credentials[email]" type="email" required placeholder="Email">
+          <input name="credentials[password]" type="password" required placeholder="Password">
+          <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
+          <button type="submit">Sign Up</button>
+        </form>
+      </section>
+      <section class="sign-in">
+        <form id="sign-in-form">
+          <h4>Sign In:</h4>
+          <input name="credentials[email]" type="email" required placeholder="Email">
+          <input name="credentials[password]" type="password" required placeholder="Password">
+          <button type="submit">Sign In</button>
+        </form>
+      </section>
+      <section class="change-password">
+        <form id="change-password-form">
+          <h4>Change Password:</h4>
+          <input name="passwords[old]" type="password" required placeholder="Old Password">
+          <input name="passwords[new]" type="password" required placeholder="New Password">
+          <button type="submit">Change Password</button>
+        </form>
+      </section>
     </body>
 </html>
