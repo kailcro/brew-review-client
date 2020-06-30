@@ -27,7 +27,6 @@ const indexBeer = function () {
 }
 
 const deleteBeer = function (beerId) {
-  console.log('made it to delete beer API')
   return $.ajax({
     method: 'DELETE',
     url: config.apiUrl + '/beers/' + beerId,
@@ -37,8 +36,18 @@ const deleteBeer = function (beerId) {
   })
 }
 
+const updateBeer = function (beerId) {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/beers/' + beerId,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   createBeer,
   indexBeer,
-  deleteBeer
+  deleteBeer,
+  updateBeer
 }

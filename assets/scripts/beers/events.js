@@ -10,6 +10,7 @@ const addHandlers = () => {
   $('#index-beer').on('click', onIndexBeer)
   $('#clear-beers').on('click', onClearBeers)
   $('.content').on('click', '.delete-beer', onDeleteBeers)
+  $('.content').on('click', '.update-beer-show', onShowUpdateBeers)
 }
 
 const onCreateBeer = function (event) {
@@ -39,10 +40,18 @@ const onDeleteBeers = (event) => {
     .then(() => ui.deleteBeerSuccess(event.target))
     .catch(ui.deleteBeerFail)
 }
+
+const onShowUpdateBeers = (event) => {
+  // use jQuery to show a form
+  // the form will have the 3 fields to edit, and a button to Submit
+  // after submit, close the form and update the resource visually
+}
+
 module.exports = {
   addHandlers,
   onCreateBeer,
   onIndexBeer,
   onClearBeers,
-  onDeleteBeers
+  onDeleteBeers,
+  onShowUpdateBeers
 }

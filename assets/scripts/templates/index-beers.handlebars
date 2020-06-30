@@ -5,5 +5,7 @@
     <h6>Type: {{beer.type}}</h6>
     <h6>Brewery: {{beer.brewery}}</h6>
     <button class="delete-beer" data-id="{{beer._id}}">Delete Beer</button>
+    <button class="update-beer-show" data-id="{{beer._id}}">Update Beer</button>
+    {{> update-beer}}
   </section>
 {{/each}}
