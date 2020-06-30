@@ -27,9 +27,13 @@ const indexBeer = function () {
 }
 
 const deleteBeer = function (beerId) {
+  console.log('made it to delete beer API')
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/beers/' + beerId
+    url: config.apiUrl + '/beers/' + beerId,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 

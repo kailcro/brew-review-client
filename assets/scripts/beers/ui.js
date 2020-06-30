@@ -23,10 +23,20 @@ const clearBooks = () => {
   $('.content').empty()
 }
 
+const deleteBeerSuccess = () => {
+  console.log('made it to delete beer success')
+  $('#message').text('Beer deleted!')
+}
+const deleteBeerFail = () => {
+  console.log('made it to delete beer fail')
+  $('#message').text('Woops. Failiure delete that beer!')
+}
 module.exports = {
   createBeerSuccess,
   createBeerFail,
   indexBeerSuccess,
   indexBeerFail,
-  clearBooks
+  clearBooks,
+  deleteBeerSuccess,
+  deleteBeerFail
 }

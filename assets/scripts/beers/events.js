@@ -9,14 +9,13 @@ const addHandlers = () => {
   $('#create-beer-form').on('submit', onCreateBeer)
   $('#index-beer').on('click', onIndexBeer)
   $('#clear-beers').on('click', onClearBeers)
+  $('.content').on('click', '.delete-beer', onDeleteBeers)
 }
 
 const onCreateBeer = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-  console.log('data inside onCreateBeer', data)
-  console.log('data.beer inside onCreateBeer', data.beer)
   api.createBeer(data)
     .then(ui.createBeerSuccess)
     .catch(ui.createBeerFail)
@@ -34,7 +33,11 @@ const onClearBeers = (event) => {
 }
 
 const onDeleteBeers = (event) => {
-
+  event.preventDefault()
+  const beerId = event.target.dataset.id
+  api.deleteBeer(beerId)
+    .then(() => ui.deleteBeerSuccess(event.target))
+    .catch(ui.deleteBeerFail)
 }
 module.exports = {
   addHandlers,
