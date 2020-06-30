@@ -1,0 +1,8 @@
+{{#each beers as |beer|}}
+  {{log beer}}
+  <section data-id="{{beer._id}}">
+    <h5>{{beer.name}}</h5>
+    <h6>Type: {{beer.type}}</h6>
+    <h6>Brewery: {{beer.brewery}}</h6>
+  </section>
+{{/each}}
