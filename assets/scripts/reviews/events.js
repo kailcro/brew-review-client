@@ -5,16 +5,16 @@ const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields.js')
 
 const addHandlers = () => {
-  $('#create-review-form').on('submit', onCreateReview)
-  // event.preventDefault()
+  $('.content').on('submit', '#create-review-form', onCreateReview)
 }
 
 const onCreateReview = (event) => {
   event.preventDefault()
+  const beerId = $(event.target).data('id')
   const form = event.target
   const data = getFormFields(form)
   console.log(data)
-  api.createBeer(data)
+  api.createReview(data, beerId)
     .then(ui.createReviewSuccess)
     .catch(ui.createReviewFail)
 }

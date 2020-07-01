@@ -2,8 +2,7 @@
 const config = require('./../config')
 const store = require('./../store')
 
-const createReview = function (data) {
-  const review = data.review
+const createReview = function (data, beerId) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/reviews',
@@ -11,7 +10,12 @@ const createReview = function (data) {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
-      review
+      review: {
+        title: data.review.title,
+        content: data.review.content,
+        rating: data.review.rating,
+        beerId: beerId
+      }
     }
   })
 }
