@@ -10,7 +10,7 @@ const addHandlers = () => {
   $('#index-beer').on('click', onIndexBeer)
   $('#clear-beers').on('click', onClearBeers)
   $('.content').on('click', '.delete-beer', onDeleteBeers)
-  $('.content').on('submit', '.update-beer', onUpdateBeers)
+  $('#content').on('submit', '#update-beer-form', onUpdateBeers)
 }
 
 const onCreateBeer = function (event) {
@@ -46,12 +46,11 @@ const onUpdateBeers = (event) => {
   // the form will have the 3 fields to edit, and a button to Submit
   // after submit, close the form and update the resource visually
   event.preventDefault()
-  const beerId = event.target.dataset.id
-  console.log('beerId in onUpdateBeer:', beerId)
-  // const form = event.target
-  // const data = getFormFields(form)
+  const form = event.target
+  const data = getFormFields(form)
+  const beerId = $(event.target).data('id')
   // i need to pass both the beerId and the data into the API call
-  api.updateBeer(beerId)
+  api.updateBeer(beerId, data)
     .then(ui.updateBeerSuccess)
     .catch(ui.updateBeerFail)
 }

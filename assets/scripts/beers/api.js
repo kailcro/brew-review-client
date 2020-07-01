@@ -36,19 +36,17 @@ const deleteBeer = function (beerId) {
   })
 }
 
-const updateBeer = function (beerId) {
-  // console.log('data in updateBeer', data)
-  // const beer = data.beer
-  console.log('beerId in updateBeer:', beerId)
+const updateBeer = function (beerId, data) {
+  const beer = data.beer
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + '/beers/' + beerId,
     headers: {
       Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      beer
     }
-    // data: {
-    //   beer
-    // }
   })
 }
 module.exports = {
