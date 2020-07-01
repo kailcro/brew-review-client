@@ -30,7 +30,7 @@
           <button type="submit">Sign In</button>
         </form>
       </section>
-      <section class="change-password">
+      <section class="change-password hidden">
         <form id="change-password-form">
           <h4>Change Password:</h4>
           <input name="passwords[old]" type="password" required placeholder="Old Password">
@@ -38,11 +38,11 @@
           <button type="submit">Change Password</button>
         </form>
       </section>
-      <button id="sign-out">Sign Out</button>
+      <button id="sign-out" class="hidden">Sign Out</button>
 
       <p id="message"></p>
 
-      <section class="create-beer">
+      <section class="create-beer hidden">
         <form id="create-beer-form">
           <h3>Create a beer:</h3>
           <input name="beer[name]" type="text" required placeholder="Beer Name">
@@ -52,14 +52,15 @@
         </form>
       </section>
 
-      <section class="index-beer">
+      <section class="index-beer hidden">
         <button id="index-beer">Index Beer</button>
       </section>
 
-      <section class="clear-beers">
+      <section class="clear-beers hidden">
         <button id="clear-beers">Clear Beers</button>
       </section>
-      <div id="content" class="content"></div>
+
+      <div id="content" class="content hidden"></div>
 
     </body>
 </html>

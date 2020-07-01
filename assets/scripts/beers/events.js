@@ -38,6 +38,7 @@ const onDeleteBeers = (event) => {
   const beerId = event.target.dataset.id
   api.deleteBeer(beerId)
     .then(() => ui.deleteBeerSuccess)
+    .then(() => onIndexBeer())
     .catch(ui.deleteBeerFail)
 }
 
