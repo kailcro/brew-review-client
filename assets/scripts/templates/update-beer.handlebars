@@ -1,17 +1,9 @@
 <section class="update-beer">
   <form id="update-beer-form">
-    <h3>Update beer:</h3>
-
-
-
-
-
-<section class="create-beer">
-  <form id="create-beer-form">
-    <h3>Create a beer:</h3>
-    <input name="beer[name]" type="text" required placeholder="Beer Name">
-    <input name="beer[type]" type="text" required placeholder="Beer Type">
-    <input name="beer[brewery]" type="text" required placeholder="Brewery Name">
-    <button type="submit">Submit Beer</button>
+    <h6>Update Beer:</h6>
+    <input name="beer[name]" value="{{beer.name}}" type="text" required placeholder="Beer Name">
+    <input name="beer[type]" value="{{beer.type}}" type="text" required placeholder="Beer Type">
+    <input name="beer[brewery]" value="{{beer.brewery}}" type="text" required placeholder="Brewery Name">
+    <button type="submit" data-id="{{beer._id}}">Update Beer</button>
   </form>
 </section>

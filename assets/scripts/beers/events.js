@@ -10,7 +10,7 @@ const addHandlers = () => {
   $('#index-beer').on('click', onIndexBeer)
   $('#clear-beers').on('click', onClearBeers)
   $('.content').on('click', '.delete-beer', onDeleteBeers)
-  $('.content').on('click', '.update-beer-show', onShowUpdateBeers)
+  $('.content').on('submit', '.update-beer', onUpdateBeers)
 }
 
 const onCreateBeer = function (event) {
@@ -37,14 +37,23 @@ const onDeleteBeers = (event) => {
   event.preventDefault()
   const beerId = event.target.dataset.id
   api.deleteBeer(beerId)
-    .then(() => ui.deleteBeerSuccess(event.target))
+    .then(() => ui.deleteBeerSuccess)
     .catch(ui.deleteBeerFail)
 }
 
-const onShowUpdateBeers = (event) => {
+const onUpdateBeers = (event) => {
   // use jQuery to show a form
   // the form will have the 3 fields to edit, and a button to Submit
   // after submit, close the form and update the resource visually
+  event.preventDefault()
+  const beerId = event.target.dataset.id
+  console.log('beerId in onUpdateBeer:', beerId)
+  // const form = event.target
+  // const data = getFormFields(form)
+  // i need to pass both the beerId and the data into the API call
+  api.updateBeer(beerId)
+    .then(ui.updateBeerSuccess)
+    .catch(ui.updateBeerFail)
 }
 
 module.exports = {
@@ -53,5 +62,5 @@ module.exports = {
   onIndexBeer,
   onClearBeers,
   onDeleteBeers,
-  onShowUpdateBeers
+  onUpdateBeers
 }

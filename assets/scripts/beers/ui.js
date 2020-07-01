@@ -1,6 +1,7 @@
 'use strict'
 // const store = require('./../store')
 const indexBeersTemplate = require('../templates/index-beers.handlebars')
+const updateBeerTemplate = require('../templates/update-beer.handlebars')
 
 const createBeerSuccess = function (data) {
   console.log('ui, create beer success')
@@ -31,6 +32,16 @@ const deleteBeerFail = () => {
   console.log('made it to delete beer fail')
   $('#message').text('Woops. Failiure delete that beer!')
 }
+
+const updateBeerSuccess = (data) => {
+  console.log('update beer data', data)
+  $('#message').text('Beer updated!')
+  const updateBeersHtml = updateBeerTemplate({ beers: data.beers })
+  $('.content').html(updateBeersHtml)
+}
+const updateBeerFail = () => {
+  $('#message').text('Woops. Failiure to update this beer!')
+}
 module.exports = {
   createBeerSuccess,
   createBeerFail,
@@ -38,5 +49,7 @@ module.exports = {
   indexBeerFail,
   clearBooks,
   deleteBeerSuccess,
-  deleteBeerFail
+  deleteBeerFail,
+  updateBeerSuccess,
+  updateBeerFail
 }
