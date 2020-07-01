@@ -1,7 +1,7 @@
 'use strict'
 // const store = require('./../store')
 const indexBeersTemplate = require('../templates/index-beers.handlebars')
-
+const reviewEvents = require('./../reviews/events.js')
 const createBeerSuccess = function (data) {
   console.log('ui, create beer success')
   $('#message').text('Created your beer successfully!')
@@ -15,6 +15,7 @@ const createBeerFail = function (data) {
 const indexBeerSuccess = function (data) {
   const showBeersHtml = indexBeersTemplate({ beers: data.beers })
   $('.content').html(showBeersHtml)
+  $(() => reviewEvents.addHandlers())
 }
 const indexBeerFail = function () {
   $('#message').text('Woops. Failiure getting all beers!')
