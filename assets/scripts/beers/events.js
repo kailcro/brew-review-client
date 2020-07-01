@@ -23,7 +23,7 @@ const onCreateBeer = function (event) {
 }
 
 const onIndexBeer = function (event) {
-  event.preventDefault()
+  // event.preventDefault()
   api.indexBeer()
     .then(ui.indexBeerSuccess)
     .catch(ui.indexBeerFail)
@@ -42,16 +42,13 @@ const onDeleteBeers = (event) => {
 }
 
 const onUpdateBeers = (event) => {
-  // use jQuery to show a form
-  // the form will have the 3 fields to edit, and a button to Submit
-  // after submit, close the form and update the resource visually
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
   const beerId = $(event.target).data('id')
-  // i need to pass both the beerId and the data into the API call
   api.updateBeer(beerId, data)
     .then(ui.updateBeerSuccess)
+    .then(() => onIndexBeer())
     .catch(ui.updateBeerFail)
 }
 
