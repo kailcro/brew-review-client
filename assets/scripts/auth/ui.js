@@ -18,6 +18,8 @@ const signInSuccess = function (data) {
   $('.sign-up-items').addClass('hidden')
   $('.account-items').removeClass('hidden')
   $('.page-items').removeClass('hidden')
+  $('#nav-outside').addClass('hidden')
+  $('#nav-inside').removeClass('hidden')
 }
 const signInFail = function (data) {
   $('#message').text('Sign in failed')
@@ -27,6 +29,8 @@ const signInFail = function (data) {
 const changePasswordSuccess = function (data) {
   $('#message').text('Your password has been changed!')
   $('form').trigger('reset')
+  $('.change-password').addClass('hidden')
+  $('.page-items').removeClass('hidden')
 }
 const changePasswordFail = function (data) {
   $('#message').text('Change password failed!')
@@ -35,7 +39,13 @@ const changePasswordFail = function (data) {
 
 const signOutSuccess = function (data) {
   $('#message').text('See ya later!')
+  $('#nav-outside').removeClass('hidden')
+  $('#nav-inside').addClass('hidden')
+  $('.sign-in-items').removeClass('hidden')
+  $('.page-items').addClass('hidden')
+  $('.change-password').addClass('hidden')
 }
+
 const signOutFail = function (data) {
   $('#message').text('Sign Out Failed')
 }

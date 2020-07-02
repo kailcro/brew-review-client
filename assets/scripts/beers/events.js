@@ -6,11 +6,19 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 // const store = require('./../store')
 
 const addHandlers = () => {
+  $('.show-create-beer').on('click', showCreateBeer)
   $('#create-beer-form').on('submit', onCreateBeer)
   $('#index-beer').on('click', onIndexBeer)
   $('#clear-beers').on('click', onClearBeers)
   $('.content').on('click', '.delete-beer', onDeleteBeers)
   $('#content').on('submit', '#update-beer-form', onUpdateBeers)
+  $('#content').on('click', '.show-update-beer', showUpdateBeer)
+  $('#content').on('click', '.show-create-review', showCreateReview)
+}
+
+const showCreateBeer = function (event) {
+  $('.show-create-beer').addClass('hidden')
+  $('.create-beer').removeClass('hidden')
 }
 
 const onCreateBeer = function (event) {
@@ -53,6 +61,14 @@ const onUpdateBeers = (event) => {
     .catch(ui.updateBeerFail)
 }
 
+const showUpdateBeer = (event) => {
+  $('.show-update-beer').addClass('hidden')
+  $('.update-beer').removeClass('hidden')
+}
+const showCreateReview = (event) => {
+  $('.show-create-review').addClass('hidden')
+  $('.create-review').removeClass('hidden')
+}
 module.exports = {
   addHandlers,
   onCreateBeer,

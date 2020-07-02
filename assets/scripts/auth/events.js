@@ -7,6 +7,7 @@ const getFormFields = require('./../../../lib/get-form-fields.js')
 const addHandlers = () => {
   $('#sign-up-form').on('submit', onSignUp)
   $('#sign-in-form').on('submit', onSignIn)
+  $('.nav-change-password').on('click', showOnChangedPassword)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
   $('#show-sign-in').on('click', showSignIn)
@@ -34,6 +35,10 @@ const onSignIn = function (event) {
     .catch(ui.signInFail)
 }
 
+const showOnChangedPassword = function () {
+  $('.change-password').removeClass('hidden')
+  $('.page-items').addClass('hidden')
+}
 const onChangePassword = function (event) {
   event.preventDefault()
   const form = event.target
