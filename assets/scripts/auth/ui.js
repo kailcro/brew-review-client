@@ -12,8 +12,12 @@ const signUpFail = function (data) {
 
 const signInSuccess = function (data) {
   $('#message').text('Welcome, ' + data.user.email + '!')
-  $('form').trigger('reset')
   store.user = data.user
+  $('form').trigger('reset')
+  $('.sign-in-items').addClass('hidden')
+  $('.sign-up-items').addClass('hidden')
+  $('.account-items').removeClass('hidden')
+  $('.page-items').removeClass('hidden')
 }
 const signInFail = function (data) {
   $('#message').text('Sign in failed')

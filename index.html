@@ -13,24 +13,40 @@
     </head>
     <body>
       <h1>Brew Review</h1>
-      <section class="sign-up">
-        <form id="sign-up-form">
-          <h4>Sign Up:</h4>
-          <input name="credentials[email]" type="email" required placeholder="Email">
-          <input name="credentials[password]" type="password" required placeholder="Password">
-          <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
-          <button type="submit">Sign Up</button>
-        </form>
+      <p id="message"></p>
+
+      <section class="sign-in-items">
+        <section class="sign-in">
+          <form id="sign-in-form">
+            <h4>Sign In:</h4>
+            <input name="credentials[email]" type="email" required placeholder="Email">
+            <input name="credentials[password]" type="password" required placeholder="Password">
+            <button type="submit">Sign In</button>
+          </form>
+        </section>
+        <section class="show-sign-up">
+          <button id="show-sign-up">Not a member?</button>
+        </section>
       </section>
-      <section class="sign-in">
-        <form id="sign-in-form">
-          <h4>Sign In:</h4>
-          <input name="credentials[email]" type="email" required placeholder="Email">
-          <input name="credentials[password]" type="password" required placeholder="Password">
-          <button type="submit">Sign In</button>
-        </form>
+
+      <section class="sign-up-items hidden">
+        <section class="sign-up">
+          <form id="sign-up-form">
+            <h4>Sign Up:</h4>
+            <input name="credentials[email]" type="email" required placeholder="Email">
+            <input name="credentials[password]" type="password" required placeholder="Password">
+            <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
+            <button type="submit">Sign Up</button>
+          </form>
+        </section>
+
+        <section class="show-sign-in">
+          <button id="show-sign-in">Already a member?</button>
+        </section>
       </section>
-      <section class="change-password hidden">
+
+      <section class="account-items hidden">
+      <section class="change-password">
         <form id="change-password-form">
           <h4>Change Password:</h4>
           <input name="passwords[old]" type="password" required placeholder="Old Password">
@@ -38,29 +54,29 @@
           <button type="submit">Change Password</button>
         </form>
       </section>
-      <button id="sign-out" class="hidden">Sign Out</button>
+      <button id="sign-out" class="sign-out">Sign Out</button>
+    </section>
 
-      <p id="message"></p>
+      <section class="page-items hidden">
+        <section class="create-beer">
+          <form id="create-beer-form">
+            <h3>Create a beer:</h3>
+            <input name="beer[name]" type="text" required placeholder="Beer Name">
+            <input name="beer[type]" type="text" required placeholder="Beer Type">
+            <input name="beer[brewery]" type="text" required placeholder="Brewery Name">
+            <button type="submit">Submit Beer</button>
+          </form>
+        </section>
 
-      <section class="create-beer hidden">
-        <form id="create-beer-form">
-          <h3>Create a beer:</h3>
-          <input name="beer[name]" type="text" required placeholder="Beer Name">
-          <input name="beer[type]" type="text" required placeholder="Beer Type">
-          <input name="beer[brewery]" type="text" required placeholder="Brewery Name">
-          <button type="submit">Submit Beer</button>
-        </form>
+        <section class="index-beer">
+          <button id="index-beer">Index Beer</button>
+        </section>
+
+        <section class="clear-beers">
+          <button id="clear-beers">Clear Beers</button>
+        </section>
+
+        <div id="content" class="content"></div>
       </section>
-
-      <section class="index-beer hidden">
-        <button id="index-beer">Index Beer</button>
-      </section>
-
-      <section class="clear-beers hidden">
-        <button id="clear-beers">Clear Beers</button>
-      </section>
-
-      <div id="content" class="content hidden"></div>
-
     </body>
 </html>

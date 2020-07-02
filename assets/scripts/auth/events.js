@@ -9,13 +9,16 @@ const addHandlers = () => {
   $('#sign-in-form').on('submit', onSignIn)
   $('#change-password-form').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
+  $('#show-sign-in').on('click', showSignIn)
+  $('#show-sign-up').on('click', showSignUp)
 }
 
 const onSignUp = function (event) {
   event.preventDefault()
   const form = event.target
   const data = getFormFields(form)
-
+  $('.sign-in-items').removeClass('hidden')
+  $('.sign-up-items').addClass('hidden')
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFail)
@@ -51,10 +54,21 @@ const onSignOut = function (event) {
     .catch(ui.signOutFail)
 }
 
+// Toggle between sign-up and sign-in views:
+const showSignUp = function (event) {
+  $('.sign-up-items').removeClass('hidden')
+  $('.sign-in-items').addClass('hidden')
+}
+const showSignIn = function (event) {
+  $('.sign-in-items').removeClass('hidden')
+  $('.sign-up-items').addClass('hidden')
+}
 module.exports = {
   addHandlers,
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  showSignIn,
+  showSignUp
 }
