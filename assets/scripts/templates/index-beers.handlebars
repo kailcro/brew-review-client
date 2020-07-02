@@ -4,7 +4,7 @@
     <h5>Name: {{beer.name}}</h5>
     <h6>Type: {{beer.type}}</h6>
     <h6>Brewery: {{beer.brewery}}</h6>
-    <button class="delete-beer" data-id="{{beer._id}}">Delete Beer</button>
+    <button class="delete-beer btn btn-primary" data-id="{{beer._id}}">Delete Beer</button>
     <section class="update-beer">
       <form id="update-beer-form" data-id="{{beer._id}}">
         <h6>Update Beer:</h6>
@@ -24,5 +24,8 @@
       <button type="submit" class="btn btn-primary">Create Review Beer</button>
     </form>
   </section>
-  <br>
+  <button class="show-beer-reviews btn btn-primary" data-id="{{reviews._id}}">Show Beer Reviews</button>
+  <br>  <br>  <br>  <br>
+  <div id="show-review-content" class="show-review-content hidden"></div>
+
 {{/each}}
