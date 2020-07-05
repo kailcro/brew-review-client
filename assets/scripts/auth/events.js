@@ -12,6 +12,7 @@ const addHandlers = () => {
   $('#sign-out').on('click', onSignOut)
   $('#show-sign-in').on('click', showSignIn)
   $('#show-sign-up').on('click', showSignUp)
+  $('#home-button').on('click', showHomePage)
 }
 
 const onSignUp = function (event) {
@@ -67,6 +68,12 @@ const showSignUp = function (event) {
 const showSignIn = function (event) {
   $('.sign-in-items').removeClass('hidden')
   $('.sign-up-items').addClass('hidden')
+}
+
+const showHomePage = function (event) {
+  $('.change-password').addClass('hidden')
+  $('.page-items').removeClass('hidden')
+  $('#content').removeClass('hidden')
 }
 module.exports = {
   addHandlers,

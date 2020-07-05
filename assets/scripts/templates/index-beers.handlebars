@@ -11,9 +11,9 @@
     <section class="update-beer hidden">
       <form id="update-beer-form" data-id="{{beer._id}}">
         <h6>Update Beer:</h6>
-        <input name="beer[name]" type="text" required placeholder="Beer Name">
-        <input name="beer[type]" type="text" required placeholder="Beer Type">
-        <input name="beer[brewery]" type="text" required placeholder="Brewery Name">
+        <input name="beer[name]" type="text" required placeholder="Beer Name" value="{{beer.name}}">
+        <input name="beer[type]" type="text" required placeholder="Beer Type" value="{{beer.type}}">
+        <input name="beer[brewery]" type="text" required placeholder="Brewery Name" value="{{beer.brewery}}">
         <button type="submit" class="btn btn-primary">Update Beer</button>
       </form>
     </section>
