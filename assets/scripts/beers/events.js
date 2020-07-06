@@ -3,7 +3,6 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('./../../../lib/get-form-fields.js')
-// const store = require('./../store')
 
 const addHandlers = () => {
   $('.show-create-beer').on('click', showCreateBeer)
@@ -31,11 +30,11 @@ const onCreateBeer = function (event) {
 }
 
 const onIndexBeer = function (event) {
-  // event.preventDefault()
   api.indexBeer()
     .then(ui.indexBeerSuccess)
     .catch(ui.indexBeerFail)
 }
+
 const onClearBeers = (event) => {
   event.preventDefault()
   ui.clearBooks()
@@ -65,6 +64,7 @@ const showUpdateBeer = (event) => {
   $('.show-update-beer').addClass('hidden')
   $('.update-beer').removeClass('hidden')
 }
+
 const showCreateReview = (event) => {
   $('.show-create-review').addClass('hidden')
   $('.create-review').removeClass('hidden')

@@ -9,9 +9,6 @@
   display: none;
 }
 
-h4 {
-  color: white;
-}
 
 main {
   @include make-container;
@@ -102,4 +99,25 @@ body {
   margin: 15px;
   font-size: 20px;
   position: relative;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-button-main {
+  display: inline;
+}
+
+h4 {
+  color: white;
+  font-size: 30px;
+}
+
+.auth {
+  position: center;
+  align-items: center;
+  margin-top: 110px;
+  font-size: 20px;
 }
