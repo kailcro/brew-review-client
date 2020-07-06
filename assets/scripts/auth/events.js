@@ -74,6 +74,9 @@ const showHomePage = function (event) {
   $('.change-password').addClass('hidden')
   $('.page-items').removeClass('hidden')
   $('#content').removeClass('hidden')
+  $('.show-create-beer').removeClass('hidden')
+  $('.create-beer').addClass('hidden')
+  $('.content').empty()
 }
 module.exports = {
   addHandlers,

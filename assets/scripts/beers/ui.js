@@ -21,7 +21,7 @@ const indexBeerFail = function () {
   $('#message').text('Woops. Failiure getting all beers!')
 }
 
-const clearBooks = () => {
+const clearBeers = () => {
   $('.content').empty()
 }
 
@@ -44,7 +44,7 @@ module.exports = {
   createBeerFail,
   indexBeerSuccess,
   indexBeerFail,
-  clearBooks,
+  clearBeers,
   deleteBeerSuccess,
   deleteBeerFail,
   updateBeerSuccess,

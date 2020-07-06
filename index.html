@@ -16,7 +16,7 @@
       <nav id="nav-outside" class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand">Brew Review</a>
+            <a class="navbar-brand">🍺 Brew Review</a>
           </div>
         </div>
       </nav>
@@ -24,7 +24,7 @@
       <nav id="nav-inside" class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark hidden">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand">Brew Review</a>
+            <a class="navbar-brand">🍺 Brew Review</a>
           </div>
           <p id="message" class="header-message"></p>
           <div class="nav navbar-nav">
@@ -46,7 +46,7 @@
       </nav>
 
       <section class="auth">
-        <section class="sign-in-items">
+        <section class="sign-in-items auth-child">
           <section class="sign-in">
             <form id="sign-in-form">
               <h4>Sign In:</h4>
@@ -60,7 +60,7 @@
           </section>
         </section>
 
-        <section class="sign-up-items hidden">
+        <section class="sign-up-items hidden auth-child">
           <section class="sign-up">
             <form id="sign-up-form">
               <h4>Sign Up:</h4>
@@ -69,14 +69,13 @@
               <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
               <button type="submit" class="btn btn-secondary">Sign Up</button>
             </form>
-          </section>
-
-          <section class="show-sign-in">
-            <button id="show-sign-in" class="btn btn-secondary">Already a member?</button>
+            <section class="show-sign-in">
+              <button id="show-sign-in" class="btn btn-secondary">Already a member?</button>
+            </section>
           </section>
         </section>
 
-        <section class="account-items hidden">
+        <section class="account-items hidden auth-child">
           <section class="change-password hidden">
             <form id="change-password-form">
               <h4>Change Password:</h4>
@@ -89,7 +88,6 @@
       </section>
 
       <section class="page-items hidden">
-
         <section class="show-create-beer">
           <button id="show-create-beer" class="btn btn-secondary btn-main">Add a new beer</button>
         </section>
@@ -112,7 +110,7 @@
           <button id="clear-beers" class="btn btn-secondary btn-main">Clear Beers</button>
         </section>
         <main>
-          <div id="content" class="content"></div>
+          <div id="content" class="content hidden"></div>
         </main>
       </section>
     </body>

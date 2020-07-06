@@ -37,7 +37,7 @@ const onIndexBeer = function (event) {
 
 const onClearBeers = (event) => {
   event.preventDefault()
-  ui.clearBooks()
+  ui.clearBeers()
 }
 
 const onDeleteBeers = (event) => {
