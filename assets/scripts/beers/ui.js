@@ -3,12 +3,10 @@
 const indexBeersTemplate = require('../templates/index-beers.handlebars')
 // const reviewEvents = require('./../reviews/events.js')
 const createBeerSuccess = function (data) {
-  console.log('ui, create beer success')
   $('#message').text('Created your beer successfully!')
   $('#create-beer-form')[0].reset()
 }
 const createBeerFail = function (data) {
-  console.log('ui, create beer fail')
   $('#message').text('Woops. Failiure creating beer!')
 }
 

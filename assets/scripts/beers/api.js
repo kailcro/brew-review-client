@@ -4,7 +4,6 @@ const store = require('./../store')
 
 const createBeer = function (data) {
   const beer = data.beer
-  console.log('beer inside create beer', beer)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/beers',

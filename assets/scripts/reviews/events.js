@@ -13,7 +13,6 @@ const onCreateReview = (event) => {
   const beerId = $(event.target).data('id')
   const form = event.target
   const data = getFormFields(form)
-  console.log(data)
   api.createReview(data, beerId)
     .then(ui.createReviewSuccess)
     .catch(ui.createReviewFail)
