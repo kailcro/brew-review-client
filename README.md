@@ -1,5 +1,5 @@
 # Brew Review Client
-Brew Review is an application that allows users to read and review differengit t beers. The original idea came from my love of good beer, and well, my hate of bad beer. The cool thing about beer is that my idea of a "good beer", can be wildly different from your idea of a "good beer". Beers come in all different flavors - and their goodness is subjective!
+Brew Review is an application that allows users to read and review differengit beers. The original idea came from my love of good beer, and well, my hate of bad beer. The cool thing about beer is that my idea of a "good beer", can be wildly different from your idea of a "good beer". Beers come in all different flavors - and their goodness is subjective!
 
 My idea was to build an application that for allowed people to get a better idea if a particular beer is something they would enjoy.
 
