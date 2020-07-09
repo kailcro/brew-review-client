@@ -27,6 +27,7 @@ After having my wireframes nailed down, I built out my API. You can check that r
 
 ## Wireframe
 ![Wireframe](https://i.imgur.com/zdpyQ76.png)
+
 ## User Stories
 - User must be able to login
 - User must be able to change password
