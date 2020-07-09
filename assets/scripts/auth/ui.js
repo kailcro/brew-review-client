@@ -6,7 +6,7 @@ const signUpSuccess = function (data) {
   $('#message').text('Hello ' + data.user.email + ", you've successfully signed up!")
 }
 const signUpFail = function (data) {
-  $('#message').text('Sign Up Failed!')
+  $('#message-out').text('Sign Up Failed!')
   $('form').trigger('reset')
 }
 
@@ -22,7 +22,7 @@ const signInSuccess = function (data) {
   $('#nav-inside').removeClass('hidden')
 }
 const signInFail = function (data) {
-  $('#message').text('Sign in failed')
+  $('#message-out').text('Sign in failed')
   $('form').trigger('reset')
 }
 
@@ -38,7 +38,7 @@ const changePasswordFail = function (data) {
 }
 
 const signOutSuccess = function (data) {
-  $('#message').text('See ya later!')
+  $('#message-out').text('See ya later!')
   $('#nav-outside').removeClass('hidden')
   $('#nav-inside').addClass('hidden')
   $('.sign-in-items').removeClass('hidden')
