@@ -1,14 +1,13 @@
 {{#each beers as |beer|}}
-  {{log beer}}
   <section data-id="{{beer._id}}">
     <h5>Name: {{beer.name}}</h5>
     <h6>Type: {{beer.type}}</h6>
     <h6>Brewery: {{beer.brewery}}</h6>
     <h6>ABV: {{beer.abv}}%</h6>
-    <h6>Reviews: {{beer.reviews.title}}</h6>
+    <!-- <h6>Reviews: {{beer.reviews.title}}</h6> -->
     <button class="delete-beer btn btn-primary" data-id="{{beer._id}}">Delete Beer</button>
     <button class="show-update-beer btn btn-primary">Update a Beer</button>
-    <button class="show-create-review btn btn-primary">Create a Review</button>
+    <!-- <button class="show-create-review btn btn-primary">Create a Review</button> -->
     <section class="update-beer hidden">
       <form id="update-beer-form" data-id="{{beer._id}}">
         <h6>Update Beer:</h6>
@@ -20,7 +19,7 @@
       </form>
     </section>
   </section>
-  <section class="create-review hidden">
+  <!-- <section class="create-review hidden">
     <form id="create-review-form" data-id="{{beer._id}}">
       <h6>Create Beer Review:</h6>
       <input name="review[title]" type="text" required placeholder="Title">
@@ -28,7 +27,7 @@
       <input name="review[rating]" type="number" required placeholder="Rating">
       <button type="submit" class="btn btn-primary">Create Review Beer</button>
     </form>
-  </section>
+  </section> -->
   <!-- <button class="show-beer-reviews btn btn-primary" data-id="{{reviews._id}}">Show Beer Reviews</button>
   <br>  <br>  <br>  <br>
   <div id="show-review-content" class="show-review-content hidden"></div> -->
