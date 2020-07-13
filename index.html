@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Brew Review</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <nav id="nav-outside" class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand">🍺 Brew Review</a>
+            <p id="message-out" class="header-message"></p>
+          </div>
+        </div>
+      </nav>
+
+      <nav id="nav-inside" class="navbar navbar-inverse navbar-fixed-top navbar-dark bg-dark hidden">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand">🍺 Brew Review</a>
+          </div>
+          <p id="message" class="header-message"></p>
+          <div class="nav navbar-nav">
+            <button id="home-button" class="homebtn btn btn-secondary nav-button-main">Home</button>
+
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle nav-button-main" type="button" id="dropdownMenu2" data-toggle="dropdown"aria-haspopup="true" aria-expanded="false">
+                Account
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="nav-change-password btn" type="button">Change Password</button>
+                <button class="sign-out btn" id="sign-out" type="button">Sign Out</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </nav>
+
+      <section class="auth">
+        <section class="sign-in-items auth-child">
+          <section class="sign-in">
+            <form id="sign-in-form">
+              <h4>Sign In:</h4>
+              <input name="credentials[email]" type="email" required placeholder="Email">
+              <input name="credentials[password]" type="password" required placeholder="Password">
+              <button type="submit" class="btn btn-secondary">Sign In</button>
+            </form>
+          </section>
+          <section class="show-sign-up">
+            <button id="show-sign-up" class="btn btn-secondary">Not a member?</button>
+          </section>
+        </section>
+
+        <section class="sign-up-items hidden auth-child">
+          <section class="sign-up">
+            <form id="sign-up-form">
+              <h4>Sign Up:</h4>
+              <input name="credentials[email]" type="email" required placeholder="Email">
+              <input name="credentials[password]" type="password" required placeholder="Password">
+              <input name="credentials[password_confirmation]" type="password" required placeholder="Confirm Password">
+              <button type="submit" class="btn btn-secondary">Sign Up</button>
+            </form>
+            <section class="show-sign-in">
+              <button id="show-sign-in" class="btn btn-secondary">Already a member?</button>
+            </section>
+          </section>
+        </section>
+
+        <section class="account-items hidden auth-child">
+          <section class="change-password hidden">
+            <form id="change-password-form">
+              <h4>Change Password:</h4>
+              <input name="passwords[old]" type="password" required placeholder="Old Password">
+              <input name="passwords[new]" type="password" required placeholder="New Password">
+              <button type="submit" class="btn btn-secondary">Change Password</button>
+            </form>
+          </section>
+        </section>
+      </section>
+
+      <section class="page-items hidden">
+        <section class="show-create-beer">
+          <button id="show-create-beer" class="btn btn-secondary btn-main">Add a new beer</button>
+        </section>
+
+        <section class="create-beer hidden">
+          <form id="create-beer-form">
+            <h3>Create a beer:</h3>
+            <input name="beer[name]" type="text" required placeholder="Beer Name">
+            <input name="beer[type]" type="text" required placeholder="Beer Type">
+            <input name="beer[brewery]" type="text" required placeholder="Brewery Name">
+            <input name="beer[abv]" type="text" required placeholder="ABV">
+            <button type="submit" class="btn btn-secondary btn-main">Submit Beer</button>
+          </form>
+        </section>
+
+        <section class="index-beer">
+          <button id="index-beer" class="btn btn-secondary btn-main">View all Beers</button>
+        </section>
+
+        <section class="clear-beers">
+          <button id="clear-beers" class="btn btn-secondary btn-main">Clear Beers</button>
+        </section>
+
+<!--  -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="updateFailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Whoops! That's not your beer to change!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--  -->
+
+        <main>
+          <div id="content" class="content hidden"></div>
+        </main>
+      </section>
+    </body>
+</html>
