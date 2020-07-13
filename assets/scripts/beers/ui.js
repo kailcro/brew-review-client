@@ -27,7 +27,7 @@ const deleteBeerSuccess = () => {
   $('#message').text('Beer deleted!')
 }
 const deleteBeerFail = () => {
-  $('#message').text('Woops. Failiure delete that beer!')
+  $('#updateFailModal').modal('show')
 }
 
 const updateBeerSuccess = (data) => {
@@ -35,7 +35,7 @@ const updateBeerSuccess = (data) => {
   $('#update-beer-form')[0].reset()
 }
 const updateBeerFail = () => {
-  $('#message').text('Woops. Failiure to update this beer!')
+  $('#updateFailModal').modal('show')
 }
 module.exports = {
   createBeerSuccess,

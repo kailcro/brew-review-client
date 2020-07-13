@@ -38,7 +38,7 @@ const changePasswordFail = function (data) {
 }
 
 const signOutSuccess = function (data) {
-  $('#message-out').text('See ya later!')
+  $('#message-out').text('Come back soon!')
   $('#nav-outside').removeClass('hidden')
   $('#nav-inside').addClass('hidden')
   $('.sign-in-items').removeClass('hidden')
