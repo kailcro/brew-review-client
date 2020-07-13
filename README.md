@@ -36,3 +36,6 @@ After having my wireframes nailed down, I built out my API. You can check that r
 - User must be able to review beer
 - User can not delete someone else's beer
 - User can not delete someone else's review
+
+## To do
+- Add review creation functionality
