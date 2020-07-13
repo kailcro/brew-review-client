@@ -61,8 +61,9 @@ const onUpdateBeers = (event) => {
 }
 
 const showUpdateBeer = (event) => {
+  const beerId = $(event.target).data('id')
   $('.show-update-beer').addClass('hidden')
-  $('.update-beer').removeClass('hidden')
+  $(`.update-beer[data-id=${beerId}]`).removeClass('hidden')
 }
 
 const showCreateReview = (event) => {

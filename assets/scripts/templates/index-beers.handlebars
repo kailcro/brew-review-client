@@ -6,9 +6,9 @@
     <h6>ABV: {{beer.abv}}%</h6>
     <!-- <h6>Reviews: {{beer.reviews.title}}</h6> -->
     <button class="delete-beer btn btn-primary" data-id="{{beer._id}}">Delete Beer</button>
-    <button class="show-update-beer btn btn-primary">Update a Beer</button>
+    <button class="show-update-beer btn btn-primary" data-id="{{beer._id}}">Update a Beer</button>
     <!-- <button class="show-create-review btn btn-primary">Create a Review</button> -->
-    <section class="update-beer hidden">
+    <section class="update-beer hidden" data-id="{{beer._id}}">
       <form id="update-beer-form" data-id="{{beer._id}}">
         <h6>Update Beer:</h6>
         <input name="beer[name]" type="text" required placeholder="Beer Name" value="{{beer.name}}">
